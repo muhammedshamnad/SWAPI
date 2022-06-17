@@ -1,15 +1,15 @@
 import { Layout } from "antd";
 import {BrowserRouter,  Route, Routes } from "react-router-dom";
-
+import { Home, Saved, Main, NotFound } from "../Pages";
 
 const MainComponent = (props: any) => (
     <Layout>
         <BrowserRouter>
         <Routes>
-       <Route path='/' element={<div>Root</div>} />
-       <Route path='/home' element={<div>Home</div>} />
-       <Route path='/saved' element={<div>Saved</div>} /> 
-       <Route path='*' element={<div>Not found</div>} /> 
+       <Route path='/' element={<Main />} />
+       <Route path='/home' element={<Home />} />
+       <Route path='/saved' element={<Saved />} /> 
+       <Route path='*' element={<NotFound />} /> 
        </Routes>
        </BrowserRouter>
     </Layout>
