@@ -1,6 +1,6 @@
 import { Layout } from "antd";
 import {BrowserRouter,  Route, Routes } from "react-router-dom";
-import { Home, Saved, Main, NotFound } from "../Pages";
+import { Home, Saved, NotFound } from "../Pages";
 
 const MainComponent = (props: any) => (
     <Layout>

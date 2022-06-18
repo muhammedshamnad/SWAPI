@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Typography } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -16,8 +16,8 @@ function Sidebar() {
   return (
     <Layout.Sider>
      <Menu style={{ minHeight: '140vh' }}>
-        <Menu.Item onClick={gotoHome}>Home</Menu.Item>
-        <Menu.Item onClick={gotoSaved}>Saved</Menu.Item>
+        <Menu.Item onClick={gotoHome}><Typography.Text strong>Home</Typography.Text></Menu.Item>
+        <Menu.Item onClick={gotoSaved}><Typography.Text strong >Saved</Typography.Text></Menu.Item>
     </Menu>
     </Layout.Sider>
   );

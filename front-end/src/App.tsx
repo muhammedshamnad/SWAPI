@@ -6,17 +6,17 @@ import MainComponent from "./Routing/ApplicationRoutes";
 
 import RootStore from '../src/Store/rootStore';
 
-import './App.css';
-import 'antd/dist/antd.css';
 import { Header } from 'antd/lib/layout/layout';
 import Sidebar from './Components/Sidebar';
-import { Home, Main, NotFound, Saved } from './Pages';
+
+import 'antd/dist/antd.css';
+import './App.css';
 
 function App() {
   return (
     <Provider {...RootStore}>
       <BrowserRouter>
-      <Header>Header</Header>
+      <Header className='text-light'>SWAPI</Header>
           <Layout style={{ minHeight: '100vh' }}>
             <Sidebar />
             <MainComponent />
