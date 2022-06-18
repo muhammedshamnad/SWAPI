@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Pagination, Spin, Tabs } from "antd";
+import { notification, Pagination, Spin, Tabs } from "antd";
 import { RenderItem, ShowFilms, ShowPeople, ShowShips } from "../../Components";
 import { Link } from "react-router-dom";
 import { inject, observer } from "mobx-react";
+import Utility from "../../Global/utility";
 const { TabPane } = Tabs;
 
 function Home(props: any) {
@@ -17,7 +18,7 @@ function Home(props: any) {
             setIsLoading(false);
         } catch (error: any) {
             setIsLoading(false)
-            console.log(error);
+            Utility?.openNotificationDanger('something went wrong', 'Please contact administrator')
         };
     }
     useEffect(() => {
@@ -28,9 +29,11 @@ function Home(props: any) {
         setEntity(key)
     };
 
+    
+
     const saveData = (data: any) => {
         savedStore?.saveData(data);
-        console.log('Saved successfully');
+        Utility?.openNotificationInfo('Saved successfully', 'Please goto the saved menu for getting saved items.')
     }
 
     const updatePage = (pageNo: number) => {
@@ -39,8 +42,8 @@ function Home(props: any) {
 
     return <div>
         <Spin spinning={isLoading}>
-            <Tabs defaultActiveKey="people" activeKey={entity} key={'1'} onChange={handleTabChange}>
-                <TabPane tab="People" key="people" />
+            <Tabs size="large" centered tabBarStyle={{color: 'black '}} defaultActiveKey="people" activeKey={entity} key={'1'} onChange={handleTabChange}>
+                <TabPane  tab="People" key="people" />
                 <TabPane tab="Films" key="films" />
                 <TabPane tab="Star ships" key="starships" />
             </Tabs>
